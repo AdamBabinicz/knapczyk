@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wgt@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&family=Montserrat:wght@400;600&family=Roboto+Condensed:wght@300;500&display=swap");
 
 :root {
   --primary-white: rgba(255, 255, 255, 0.63);
@@ -9,6 +9,9 @@ body {
   font-family: "Roboto Condensed", sans-serif;
 }
 /* NAVBAR */
+nav {
+  z-index: 2;
+}
 .logo {
   width: 5.75rem;
 }
@@ -32,10 +35,99 @@ nav ul li {
   max-width: 17.25rem;
   padding: 0 !important;
 }
+
+@media (max-width: 768px) {
+  .navbar-brand {
+    width: 7rem;
+    background: green;
+  }
+}
 .navbar-nav > li > a.active,
 .navbar-nav > li > a.active:focus {
   border-top: 0.1875rem solid var(--primary-white);
 }
 .navbar-nav > li > a:hover {
   border-top: 0.1875rem solid var(--primary-white);
+}
+
+/* HEADER */
+.header-wraper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 50%,
+      rgba(0, 0, 0, 0.6) 100%
+    ),
+    url("./images/sunset.jpg") center/cover no-repeat fixed;
+}
+.main-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.main-info h1 {
+  color: var(--primary-white);
+  text-transform: uppercase;
+  font-family: "Charmonman", cursive;
+  text-shadow: 0.05rem 0.05rem 0.05rem rgba(0, 0, 0, 0.72);
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .main-info h1 {
+    font-size: 1.9rem;
+  }
+}
+/* TYPED TEXT */
+.typed-text {
+  font-size: 2rem;
+  color: var(--primary-white);
+  /* background: rgba(0, 0, 0, 0.1); */
+}
+
+@media (max-width: 768px) {
+  .typed-text {
+    font-size: 1.5rem;
+  }
+}
+
+/* HEADER MAIN OFFER BUTTON */
+.btn-main-offer {
+  border: 1px solid var(--primary-white);
+  border-radius: 0;
+  padding: 0.625rem 0.75rem 0.75rem 0.75rem;
+  color: var(--primary-dark);
+  font-weight: 500;
+  margin: 2rem;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
+.btn-main-offer:hover {
+  text-decoration: none;
+  background: var(--primary-dark);
+  color: var(--primary-white);
+  border: 1px solid var(--primary-dark);
+}
+/* PARTICLES JS */
+.tsparticles-canvas-el {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .particles-canvas {
+    display: none;
+  }
 }
